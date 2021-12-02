@@ -4,7 +4,6 @@ use std::io::BufReader;
 use std::io::ErrorKind;
 
 fn get_reader(id: &str) -> BufReader<File> {
-    // read from file at "src/<id>/src/input.txt"
     let root_loc = "src/".to_owned() + id + "/src/input.txt";
     let lib_loc = "src/input.txt";
     let file = File::open(root_loc);
@@ -21,6 +20,7 @@ fn get_reader(id: &str) -> BufReader<File> {
     BufReader::new(file)
 }
 
+/// Get a `Vec<i64>` given the day ID
 pub fn get_input_integer(id: &str) -> Vec<i64> {
     let numbers: Vec<i64> = get_reader(id)
         .lines()
@@ -29,6 +29,7 @@ pub fn get_input_integer(id: &str) -> Vec<i64> {
     numbers
 }
 
+/// Get a `Vec<String>` given the day ID
 pub fn get_input_string(id: &str) -> Vec<String> {
     let strings: Vec<String> = get_reader(id)
         .lines()
