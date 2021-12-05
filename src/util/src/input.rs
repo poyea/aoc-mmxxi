@@ -6,13 +6,20 @@ use std::io::ErrorKind;
 fn get_reader(id: &str) -> BufReader<File> {
     let root_loc = "src/".to_owned() + id + "/src/input.txt";
     let lib_loc = "src/input.txt";
+    let pwd_loc = "input.txt";
     let file = File::open(root_loc);
     let file = match file {
         Ok(file) => file,
         Err(error) => match error.kind() {
             ErrorKind::NotFound => match File::open(lib_loc) {
                 Ok(fc) => fc,
-                Err(e) => panic!("Problem opening the file: {:?}", e),
+                Err(err) => match err.kind() {
+                    ErrorKind::NotFound => match File::open(pwd_loc) {
+                        Ok(fc) => fc,
+                        Err(e) => panic!("Problem opening the file: {:?}", e),
+                    },
+                    other_error => panic!("Problem opening the file: {:?}", other_error),
+                },
             },
             other_error => panic!("Problem opening the file: {:?}", other_error),
         },
