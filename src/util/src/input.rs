@@ -7,8 +7,7 @@ fn get_reader(id: &str) -> BufReader<File> {
     let root_loc = "src/".to_owned() + id + "/src/input.txt";
     let lib_loc = "src/input.txt";
     let pwd_loc = "input.txt";
-    let file = File::open(root_loc);
-    let file = match file {
+    let file = match File::open(root_loc) {
         Ok(file) => file,
         Err(error) => match error.kind() {
             ErrorKind::NotFound => match File::open(lib_loc) {
