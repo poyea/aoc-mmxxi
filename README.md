@@ -1,5 +1,5 @@
 ```sh
-$ cargo build --workspace
-$ cargo test --workspace
-$ cargo doc --workspace
+$ cargo build --all
+$ cargo test --all
+$ cargo doc --all
 ```
