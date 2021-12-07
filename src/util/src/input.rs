@@ -37,3 +37,11 @@ pub fn get_input_string(id: &str) -> Vec<String> {
         .collect();
     strings
 }
+
+/// Split a string and parse as integers
+pub fn split_string(delimiter: &str, string: &str) -> Vec<i64> {
+    string
+        .split(delimiter)
+        .map(|x| x.parse().unwrap())
+        .collect()
+}
