@@ -21,7 +21,7 @@ mod tests {
 
     #[test]
     fn test_solve_part2() {
-        assert_eq!(solve_part1(), 2022);
+        assert_eq!(solve_part2(), 2022);
     }
 }
 
