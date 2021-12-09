@@ -1,12 +1,15 @@
 use util::dummy::new_year;
+use util::input::get_input_string;
 
 #[allow(dead_code)]
 pub fn solve_part1() -> i64 {
+    let _strings = get_input_string("08");
     new_year()
 }
 
 #[allow(dead_code)]
 pub fn solve_part2() -> i64 {
+    let _strings = get_input_string("08");
     new_year()
 }
 
