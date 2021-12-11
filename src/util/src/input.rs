@@ -28,20 +28,18 @@ fn get_reader(id: &str) -> BufReader<File> {
 
 /// Get a `Vec<i64>` given the day ID
 pub fn get_input_integer(id: &str) -> Vec<i64> {
-    let numbers: Vec<i64> = get_reader(id)
+    get_reader(id)
         .lines()
         .map(|line| line.unwrap().parse::<i64>().unwrap())
-        .collect();
-    numbers
+        .collect()
 }
 
 /// Get a `Vec<String>` given the day ID
 pub fn get_input_string(id: &str) -> Vec<String> {
-    let strings: Vec<String> = get_reader(id)
+    get_reader(id)
         .lines()
         .map(|l| l.expect("Could not parse string from file"))
-        .collect();
-    strings
+        .collect()
 }
 
 /// Split a string and parse as integers
@@ -50,4 +48,19 @@ pub fn split_string(delimiter: &str, string: &str) -> Vec<i64> {
         .split(delimiter)
         .map(|x| x.parse().unwrap())
         .collect()
+}
+
+pub type Grid = Vec<Vec<i64>>;
+pub type GridCell = (usize, usize);
+
+pub fn make_grid(strings: &Vec<String>) -> Grid {
+    let mut grid: Grid = Vec::new();
+    for line in strings {
+        let mut line_vec = Vec::new();
+        for ch in line.chars() {
+            line_vec.push(ch.to_digit(10).unwrap() as i64);
+        }
+        grid.push(line_vec);
+    }
+    grid
 }
