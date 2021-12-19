@@ -7,7 +7,7 @@ This year, 2021, we crack the [Advent of Code](https://adventofcode.com/) in Rus
 ```sh
 $ cargo -V
 cargo 1.56.0 (4ed5d137b 2021-10-04)
-$ cargo build --all # build
-$ cargo test --all  # test
-$ cargo doc --all   # documentation
+$ cargo build --all --release # build
+$ cargo test --all --release  # test
+$ cargo doc --all --release   # documentation
 ```
