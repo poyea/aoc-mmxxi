@@ -38,7 +38,7 @@ pub fn get_input_integer(id: &str) -> Vec<i64> {
 pub fn get_input_string(id: &str) -> Vec<String> {
     get_reader(id)
         .lines()
-        .map(|l| l.expect("Could not parse string from file"))
+        .map(|line| line.unwrap())
         .collect()
 }
 
@@ -46,7 +46,7 @@ pub fn get_input_string(id: &str) -> Vec<String> {
 pub fn split_string(delimiter: &str, string: &str) -> Vec<i64> {
     string
         .split(delimiter)
-        .map(|x| x.parse().unwrap())
+        .map(|x| x.parse::<i64>().unwrap())
         .collect()
 }
 
@@ -57,8 +57,8 @@ pub fn make_grid(strings: &Vec<String>) -> Grid {
     let mut grid: Grid = Vec::new();
     for line in strings {
         let mut line_vec = Vec::new();
-        for ch in line.chars() {
-            line_vec.push(ch.to_digit(10).unwrap() as i64);
+        for c in line.chars() {
+            line_vec.push(c.to_digit(10).unwrap() as i64);
         }
         grid.push(line_vec);
     }
