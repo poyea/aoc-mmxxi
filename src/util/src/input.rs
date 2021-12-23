@@ -36,10 +36,7 @@ pub fn get_input_integer(id: &str) -> Vec<i64> {
 
 /// Get a `Vec<String>` given the day ID
 pub fn get_input_string(id: &str) -> Vec<String> {
-    get_reader(id)
-        .lines()
-        .map(|line| line.unwrap())
-        .collect()
+    get_reader(id).lines().map(|line| line.unwrap()).collect()
 }
 
 /// Split a string and parse as integers
