@@ -1,6 +1,6 @@
 <img align="left" width="150" height="150" src="https://user-images.githubusercontent.com/24757020/148883435-7217be20-b96f-4e0c-bd75-e970a5377291.png" alt="Christmas Tree">
 
-# Advent of Code MMXXI [![Rust](https://github.com/poyea/aoc/actions/workflows/rust.yml/badge.svg?branch=main)](https://github.com/poyea/aoc/actions/workflows/rust.yml)
+# Advent of Code MMXXI [![Rust](https://github.com/poyea/aoc-mmxxi/actions/workflows/rust.yml/badge.svg?branch=main)](https://github.com/poyea/aoc-mmxxi/actions/workflows/rust.yml)
 
 This year, 2021, we crack the [Advent of Code](https://adventofcode.com/) in Rust.
 
